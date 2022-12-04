@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeRequests()
-                .antMatchers("/api/authentication/**").permitAll()//login and register pre-path
+                .antMatchers("/api/authentication/**").permitAll()
                 .antMatchers("/api/admin/**").hasRole(Role.ADMIN.name())
                 .anyRequest().authenticated();
 
